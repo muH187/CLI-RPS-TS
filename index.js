@@ -1,16 +1,9 @@
 #! /usr/bin/env node
 import inquirer from "inquirer";
-let getComputerChoice = () => {
-    const options = ["Rock", "Paper", "Scissors"];
-    const randomIndex = Math.floor(Math.random() * 3);
-    return options[randomIndex];
-};
-const compChoice = getComputerChoice();
 let userScore = 0;
 let compScore = 0;
 let tie = 0;
-let coding = true;
-while (coding) {
+while (true) {
     let getComputerChoice = () => {
         const options = ["Rock", "Paper", "Scissors"];
         const randomIndex = Math.floor(Math.random() * 3);
@@ -44,8 +37,10 @@ while (coding) {
         tie++;
     }
     else if (askUser.userChoice == "Exit") {
-        console.log(`Your Score: ${userScore} \nComputer Score: ${compScore} \nTie: ${tie}`);
-        coding = false;
+        console.log(`Your Score: ${userScore}
+Computer Score: ${compScore}
+Tie: ${tie}`);
+        break;
     }
     else {
         console.log("Computer Won! You lose...");
